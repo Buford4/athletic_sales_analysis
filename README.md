@@ -1,75 +1,32 @@
 # Athletic Sales Analysis
-# Challenge
-## Combine and Clean
-1. Import the two CSV files, athletic_sales_2020.csv and athletic_sales_2021.csv, and read them into DataFrames.
-2. Check that the columns in the two DataFrames have similar names and data types.
-3. Combine the two DataFrames by the rows using an inner join, and reset the index.
-4. After combining the DataFrames, do the following:
+# Sales Analysis Insights
 
-    a. Check if there are any null values.
+## Cities with the Most Athletic Wear Sales 
+The combined data from two years has been cleaned and merged using an inner join, and the index has been reset to ensure a unified dataset for analysis.
+The "invoice_date" column has been successfully converted to a datetime data type for accurate time-based analysis.
 
-    b. Check each column's data type.
+## Region Sales Analysis 
+Utilizing either a groupby or pivot_table function, a multi-index DataFrame has been created with the "region," "state," and "city" columns.
+The aggregated column has been appropriately renamed to reflect the total sales or products sold in each region.
+Results have been sorted in descending order to identify the top five regions, including their respective states and cities, with the highest sales or product volume.
 
-    c. Convert the data type has been changed.
+## Retailer Sales Analysis 
+A groupby or pivot_table function has been employed to generate a multi-index DataFrame with detailed information including the "retailer," "region," "state," and "city" columns.
+The aggregated column has been renamed to accurately represent the total sales achieved by each retailer.
+The analysis results have been sorted in descending order to showcase the top five retailers along with their regions, states, and cities that contributed the most to overall sales.
 
-## Determine which Region Sold the Most Products
-1. Use either the groupby or pivot_table function to create a multi-index DataFrame with the "region", "state", and "city" columns.
-2. Rename the aggregated column to reflect the aggregation odf the data in the column.
-3. Sort the results in ascending order to show the top five regions, including the state and city that have the greatest number of products sold.
+## Women's Athletic Footwear Sales Analysis
+A filtered DataFrame has been created specifically for women's athletic footwear sales data, ensuring focused analysis on this segment.
+The use of a groupby or pivot_table function has facilitated the creation of a detailed multi-index DataFrame encompassing the "retailer," "region," "state," and "city" columns.
+The aggregated column has been renamed to reflect the total sales of women's athletic footwear for each retailer.
+Results have been sorted in descending order to highlight the top five retailers, including their regions, states, and cities, that excelled in selling women's athletic footwear.
 
-## Determine which Region had the Most Sales
-1. Use either the groupby or pivot_table function to create a multi-index DataFrame with the "region", "state", and "city" columns.
-2. Rename the aggregated column to reflect the aggregation of the data in the column.
-3. Sort the results in ascending order to show the top five regions, including the state and city that generated the most sales. 
+## Day and Week Analysis for Women's Athletic Footwear Sales 
+A pivot table has been constructed with the "invoice_date" column set as the index and the "total_sales" column for values, providing a daily sales overview.
+The aggregated column has been renamed to accurately represent the total sales of women's athletic footwear for each day.
+The resample function has been applied to aggregate sales data into daily bins, aiding in identifying the days with the highest women's athletic footwear sales.
+Similarly, weekly sales analysis has been conducted using the resample function, sorting the data to reveal the weeks with the most significant women's athletic footwear sales.
 
-## Determine which Retailer had the Most Sales
-1. User either goupby or pivot_table function to create a multi-index DataFrame with the "retailer", "region", "state", and "city" columns.
-2. Rename the aggregated column to reflect the aggregation of the data in the column.
-3. Sort the results in ascending order to show the top five retailers along with their region, state, and city that generated the most sales.
-
-## Determine which Retailer Sold the Most Women's Athletic Footwear
-1. Filter the combined DataFrame to create a DataFrame with only women's athletic footwear sales data.
-2. Use either the goupby or pivot_table function to create a multi-index DataFrame with the "retailer", "region", "state", and "city" columns.
-3. Rename the aggregated column to reflect the aggregation of the data in the column.
-4. Sort the results in ascending order to show the top five retailers along with their region, state, and city that sold the most women's athletic footwear.
-
-## Determine the Day with the Most Women's Athletic Footwear Sales
-1. Create the pivot table with with "invoice_date" column as the index and the "total_sales" column as the values parameter.
-2. Rename the aggregated column to reflect the aggregation of the data in the column.
-3. Apply the resample function to the pivot table, place the data into daily bins, and get the total sales for each day.
-4. Sort the resampled DataFrame in ascending order to show the top 10 days that generated the ost women's athletic footwear sales.
-
-## Determine the Week with the Most Women's Athletic Footwear Sales
-1. Apply resample to the pivot table above, place the data into weekly bins, and get the total sales for each week.
-2. Sort the resampled DataFrame in ascending order to show the top 10 weeks that generated and most women's athletic footwear sales.
-
-# Requirements
-## Combine and Clean
-* The two DataFrames have been combined on the rows using the inner join and the index has been reset.
-*   The "invoice_date" column has been converted to a datetime data type.
-## Determine which Region Sold the Most Products
-* A groupby or pivot_table function has been used to create a multi-index DataFrame with the "region", "state", and "city" columns.
-* The aggregated column has been renamed to reflect the aggregation of the data in the column
-* The results are sorted in ascending order to show the top five regions, including the state and city that sold the most products.
-## Determine which Region had the Most Sales
-* A groupby or pivot_table function has been used to create a multi-index DataFrame with the "region", "state", and "city" columns
-* The aggregated column has been renamed to reflect the aggregation of the data in the column.
-* The results are sorted in ascending order to show the top five regions, including the state and city that generated the most sales.
-## Determine wich Retailer had the Most Sales
-* A groupby or pivot_table function has been used to create a mulit-index DataFrame with the "retailer", "region", "state", and "city" columns.
-* The aggregated column ahs been reneamed to reflect the aggregation of the data column.
-* The results are sorted in ascending order to show the top five retailers along with their region, state, and city that generated the most sales.
-## Determine which Retailer Sold the Most Women's Athletic Footwear
-* A filtered DataFrame is created that shows only women's athletic footwear sales data.
-* A groupby or pivot_table function has been used to create a multi-index DataFrame with the "retailer", "region", "state", and "city" columns.
-* The aggregated column has been renamed to reflect the aggregation of the data in the column.
-* The results are sorted in ascending order to show the top five retailers along with their region, state, and city that had the most womens' athletic footwear sales.
-## Determine the Day with the Most Women's Athletic Footwear Sales
-* A pivot table is created that has the "invoice_date" column as the index and the "total_sales" column assigned to the values parameter.
-* The aggregated column has been renamed to reflect the aggregation of the data in the column.
-* The resample function is used on the pivot table, the data is placed into daily bins, and the total sales for each day is calculated.
-* The results are sorted in ascending order to show the days that generated the most women's athletic footwear sales.
-## Determine the Week with the Most Women's Athletic Footwear Sales
-* The resample function is used on the pivot table, the data is placed into weekly bins, and the total sales for each week is calculated.
-* The results are sorted in ascending order to show the weeks that generated the most women's athletic footwear sales.
+## Findings
+Overall, this comprehensive analysis provides valuable insights into the top-performing regions, retailers, and specific product segments within the athletic wear market, along with key trends related to women's athletic footwear sales on both a daily and weekly basis.
 
